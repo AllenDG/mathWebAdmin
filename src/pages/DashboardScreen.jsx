@@ -12,6 +12,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import RecentUsers from "../components/RecentUsers";
+import AgeDistributionPieChart from "../components/AgeDistributionPieChart";
 
 export default function DashboardScreen() {
   const { users, loading } = useFetchAllUsersData();
@@ -50,13 +51,13 @@ export default function DashboardScreen() {
         Admin Dashboard
       </h1>
 
-      <div className="flex flex-row gap-3">
-        <div className="w-full bg-gray-200 rounded-lg p-3">
+      <div className="flex justify-center">
+        <div className="w-3/5 bg-gray-200 rounded-lg p-3 mb-6">
           <h2 className="text-xl font-semibold mb-2">Users by Month</h2>
           <ResponsiveContainer width="100%" height={400}>
             <BarChart
               data={aggregatedUsersByMonth}
-              margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+              margin={{ top: 5, right: 40, left: 40, bottom: 10 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="month" />
@@ -67,8 +68,15 @@ export default function DashboardScreen() {
             </BarChart>
           </ResponsiveContainer>
         </div>
-        <RecentUsers users={users} />
       </div>
+
+      <div className="flex justify-center">
+        <div className="w-3/5 bg-gray-200 rounded-lg p-3 mb-6">
+          <RecentUsers users={users} />
+        </div>
+      </div>
+
+      
     </div>
   );
 }

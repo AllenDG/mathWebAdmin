@@ -1,7 +1,7 @@
 export default function RecentUsers({ users }) {
   return (
-    <div className="bg-gray-200 p-2 rounded-lg w-full max-w-[700px]">
-      <h1 className="text-2xl font-bold">Recent Users: </h1>
+    <div className="bg-gray-200 p-2 rounded-lg w-full max-w-[700px] ms-40 ">
+      <h1 className="text-2xl font-bold m-5">Recent Users: </h1>
       <table className="w-full">
         <thead>
           <tr>
